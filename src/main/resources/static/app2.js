@@ -24,13 +24,15 @@ function connect() {
 
         stompClient.subscribe('/topic/suggestion', function (message) {
 
-            console.log(JSON.parse(message.body).suggestions);
 
-                JSON.parse(message.body).suggestions.forEach(function(value, key) {
-                    console.log(key + " = " + value);
+                JSON.parse(message.body).suggestions.forEach(function (value) {
+                    console.log();
+
                     $("#suggestionTable").append('<tr><td>' + value + '</td></tr>');
                 })
 
+                // todo this needs to be an iteration
+                $("#suggestionError").append('Error: ' + JSON.parse(message.body).errors[0].message );
 
             },
             function (err) {
@@ -43,10 +45,10 @@ function connect() {
         stompClient.subscribe('/topic/search', function (message) {
 
 
-                JSON.parse(message.body).result.forEach(function(value) {
+                JSON.parse(message.body).result.forEach(function (value) {
                     console.log();
 
-                    $("#accountsTable").append('<tr><td>' + value.account.name+ '</td><td>'+value.account.availableAmount    +'</td></tr>');
+                    $("#accountsTable").append('<tr><td>' + value.account.name + '</td><td>' + value.account.availableAmount + '</td></tr>');
                 })
 
 

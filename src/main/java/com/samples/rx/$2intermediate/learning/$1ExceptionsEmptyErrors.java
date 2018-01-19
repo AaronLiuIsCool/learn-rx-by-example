@@ -18,11 +18,11 @@ public class $1ExceptionsEmptyErrors {
 
         strategy1Variation1();
         System.out.println("------------------------------");
-        strategy1Variation2();
-        System.out.println("------------------------------");
-        strategy2Variation1();
-        System.out.println("------------------------------");
-        strategy2Variation2();
+//        strategy1Variation2();
+//        System.out.println("------------------------------");
+//        strategy2Variation1();
+//        System.out.println("------------------------------");
+//        strategy2Variation2();
 
     }
 
@@ -143,6 +143,7 @@ public class $1ExceptionsEmptyErrors {
     }
 
     public static Observable<Account> getAccount(Integer accountId) {
+
         return Observable.create(e -> {
 
             if (accountId == 6) { // assume this failed and we need to rely on old system

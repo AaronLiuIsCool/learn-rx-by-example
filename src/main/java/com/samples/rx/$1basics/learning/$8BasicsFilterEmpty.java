@@ -13,9 +13,9 @@ public class $8BasicsFilterEmpty {
 
     public static void main(String[] args) {
 
-        filter();
-        empty();
-        error();
+//        filter();
+//        empty();
+//        error();
         errorAndErrorHandling();
 
     }
@@ -90,18 +90,7 @@ public class $8BasicsFilterEmpty {
                 new Account("Business Checking", 10000f, 4)
         );
 
-        /**
-         * The following code shows how to filter. We are excluding "c" from being emitted
-         * The following code should result in
-         *
-         * subscribed
-         * (a)
-         * (b)
-         * (d)
-         * (e)
-         * completed
-         *
-         */
+
         Observable.fromIterable(accounts)
                 .flatMap($8BasicsFilterEmpty::extractApproachable)
                 .subscribe(new Observer<Account>() {

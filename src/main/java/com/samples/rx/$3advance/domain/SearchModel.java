@@ -3,7 +3,7 @@ package com.samples.rx.$3advance.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchModel {
+public class SearchModel extends DataModel {
 
     private String text = "al";
     private int page;

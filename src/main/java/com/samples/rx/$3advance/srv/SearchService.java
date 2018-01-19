@@ -132,7 +132,7 @@ public class SearchService {
             searchModel.setResult(
                     accounts.stream()
                             .filter(account -> account.getName().contains(searchModel.getText()))
-                            .map(account -> new SearchResult(account, null))
+                            .map(account -> new SearchResult(account))
                             .collect(Collectors.toList()));
             e.onNext(searchModel);
             e.onComplete();

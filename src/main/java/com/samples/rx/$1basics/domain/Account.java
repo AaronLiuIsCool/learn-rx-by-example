@@ -27,12 +27,4 @@ public class Account {
         return score;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "name='" + name + '\'' +
-                ", availableAmount=" + availableAmount +
-                ", score=" + score +
-                '}';
-    }
 }
